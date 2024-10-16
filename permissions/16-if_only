@@ -1,2 +1,8 @@
 #!/bin/bash
-[ -e hello ] && [ "$(stat -c '%U' hello)" = "guillaume" ] && chown vincent hello
+
+if [ -e hello ]; then
+    if [ "$(stat -c '%U' hello)" = "guillaume" ]; then
+        chown vincent hello
+    fi
+fi
+
